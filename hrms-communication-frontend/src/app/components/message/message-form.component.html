@@ -1,0 +1,14 @@
+<div *ngIf="!sent">
+    <h2>Send a Message</h2>
+    <form (ngSubmit)="sendMessage()">
+      <input type="text" placeholder="Subject" [(ngModel)]="message.subject" name="subject" required />
+      <textarea placeholder="Body" [(ngModel)]="message.body" name="body" required></textarea>
+      <input type="text" placeholder="Sender" [(ngModel)]="message.sender" name="sender" required />
+      <input type="text" placeholder="Receiver" [(ngModel)]="message.receiver" name="receiver" required />
+      <button type="submit">Send</button>
+    </form>
+  </div>
+  <div *ngIf="sent">
+    <p>Message sent successfully!</p>
+  </div>
+  
